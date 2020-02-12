@@ -1,0 +1,30 @@
+import random
+
+games=''
+
+while games=='':
+    try:
+        games=int(input("How many games would you like to play"))
+    except:
+        print("Please select using number")
+
+for game in range(0,games):
+    pick=random.randint(1,26)
+    guess="none"
+    attempts=0
+    
+    while pick!= guess:
+        try:
+            guess=int(input("pick a number:"))
+        except:
+            print("Please select a number")
+            continue
+            
+        if guess!=pick:
+            attempts+=1
+            if guess>pick:
+                print("Too high")
+            else:
+                print("Too Low")
+        else:
+            print("correct")
